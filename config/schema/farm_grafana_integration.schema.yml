@@ -1,0 +1,9 @@
+# Schema for the configuration files of the farm_map module.
+farm_grafana_integration.settings:
+  type: config_object
+  label: 'Grafana Settings'
+  mapping:
+    grafana_url:
+      type: string
+      label: 'Grafana Url'
+      description: 'Used to show a instance of Grafana, when clicking the sidebar.'

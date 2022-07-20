@@ -1,0 +1,55 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * @file
+ * Module file for grafana intergration
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function farm_grafana_integration_theme() {
+  return array(
+    'grafana_integration_panel_formatter' => array(
+      'variables' => array('url' => NULL),
+    ),
+    'grafana_integration_full_view' => array(
+      'variables' => array('url' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function farm_grafana_integration_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'asset') {
+    $fields['grafana_panel_link'] = BaseFieldDefinition::create('grafana_integration')
+    ->setLabel(t('Grafana Panel Link'))
+    ->setDescription(t('Option to add a Grafana Panel'))
+    ->setRevisionable(TRUE);
+
+    $fields['grafana_panel_link']->setDisplayOptions('form', [
+      'type' => 'options_buttons',
+      'weight' => $options['weight']['form'] ?? 0,
+    ]);
+
+    $fields['grafana_panel_link']->setDisplayOptions('view', [
+      'label' => 'inline',
+      'type' => 'list_default',
+      'weight' => $options['weight']['view'] ?? 0,
+    ]);
+
+    return $fields;
+ }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function farm_grafana_integration_preprocess_toolbar(&$variables) {
+  $variables['#attached']['library'][] = 'farm_grafana_integration/grafana_toolbar';
+}

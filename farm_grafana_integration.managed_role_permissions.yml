@@ -1,0 +1,3 @@
+farm_grafana_integration:
+  default_permissions:
+    - access toolbar

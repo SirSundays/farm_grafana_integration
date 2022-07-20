@@ -1,0 +1,9 @@
+name: farmOS Grafana Integration
+type: module
+description: Embeds a grafana instance in farmOS
+core_version_requirement: ^9
+package: farmOS Contrib
+dependencies:
+  - admin_toolbar:admin_toolbar
+  - admin_toolbar:admin_toolbar_links_access_filter
+  - drupal:toolbar

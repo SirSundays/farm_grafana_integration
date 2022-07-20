@@ -1,0 +1,5 @@
+farm.grafana:
+  title: Grafana
+  parent: farm.base
+  route_name: grafana.full_view
+  weight: 100

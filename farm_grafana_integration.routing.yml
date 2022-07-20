@@ -1,0 +1,15 @@
+grafana.full_view:
+  path: '/grafana' 
+  defaults: 
+    _controller: '\Drupal\farm_grafana_integration\Controller\FarmGrafanaIntegrationController::fullView' 
+    _title: 'Grafana'
+  requirements: 
+    _permission: 'access content'
+
+farm_grafana_integration.settings:
+  path: '/farm/settings/grafana'
+  defaults:
+    _form: '\Drupal\farm_grafana_integration\Form\GrafanaSettingsForm'
+    _title: 'Grafana settings'
+  requirements:
+    _permission: 'administer farm'
