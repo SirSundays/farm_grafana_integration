@@ -56,5 +56,5 @@ Otherwise Grafana would not load up. Also worth mentioning is: My farmOS and Gra
 
 ## Special Thanks
 Special Thanks go out to:
-Michael Stenta - https://github.com/mstenta
-Paul Weidner - https://github.com/paul121
+- Michael Stenta - https://github.com/mstenta
+- Paul Weidner - https://github.com/paul121
